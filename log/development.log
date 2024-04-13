@@ -378,3 +378,105 @@ Processing by Users::RegistrationsController#google_signup as */*
 Completed 409 Conflict in 121ms (Views: 2.4ms | ActiveRecord: 25.4ms | Allocations: 5888)
 
 
+Started POST "/users" for ::1 at 2024-04-13 14:46:32 +0530
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:13:in `create'
+  [1m[36mUser Exists? (121.9ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rajesh@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users/registrations_controller.rb:13:in `create'
+Completed 422 Unprocessable Entity in 8586ms (Views: 135.7ms | ActiveRecord: 535.4ms | Allocations: 10338)
+
+
+Started POST "/login" for ::1 at 2024-04-13 16:21:32 +0530
+  
+ArgumentError (Before process_action callback :verify_authenticity_token has not been defined):
+  
+app/controllers/users/sessions_controller.rb:6:in `<class:SessionsController>'
+app/controllers/users/sessions_controller.rb:3:in `<main>'
+Started POST "/login" for ::1 at 2024-04-13 16:22:17 +0530
+Processing by Users::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (30.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` IS NULL LIMIT 1[0m
+  ↳ app/controllers/users/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 255ms (Views: 1.0ms | ActiveRecord: 53.5ms | Allocations: 1541)
+
+
+Started POST "/login" for ::1 at 2024-04-13 16:23:26 +0530
+Processing by Users::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` IS NULL LIMIT 1[0m
+  ↳ app/controllers/users/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 109ms (Views: 0.2ms | ActiveRecord: 103.6ms | Allocations: 2315)
+
+
+Started POST "/login" for ::1 at 2024-04-13 16:24:01 +0530
+Processing by Users::SessionsController#create as */*
+  Parameters: {"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'rajesh@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/sessions_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 325ms (ActiveRecord: 36.4ms | Allocations: 6746)
+
+
+  
+ActionDispatch::Request::Session::DisabledSessionError (Your application has sessions disabled. To write to the session you must first configure a session store):
+  
+app/controllers/users/sessions_controller.rb:14:in `create'
+Started POST "/login" for ::1 at 2024-04-13 16:24:44 +0530
+Processing by Users::SessionsController#create as */*
+  Parameters: {"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'rajesh@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/sessions_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 304ms (ActiveRecord: 20.0ms | Allocations: 6730)
+
+
+  
+ActionDispatch::Request::Session::DisabledSessionError (Your application has sessions disabled. To write to the session you must first configure a session store):
+  
+app/controllers/users/sessions_controller.rb:15:in `create'
+Started POST "/login" for ::1 at 2024-04-13 16:24:59 +0530
+Processing by Users::SessionsController#create as */*
+  Parameters: {"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'rajesh@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/sessions_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 310ms (ActiveRecord: 17.2ms | Allocations: 6724)
+
+
+  
+ActionDispatch::Request::Session::DisabledSessionError (Your application has sessions disabled. To write to the session you must first configure a session store):
+  
+app/controllers/users/sessions_controller.rb:15:in `create'
+Started POST "/login" for ::1 at 2024-04-13 16:26:01 +0530
+Processing by Users::SessionsController#create as */*
+  Parameters: {"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'rajesh@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/sessions_controller.rb:11:in `create'
+Completed 200 OK in 350ms (Views: 2.0ms | ActiveRecord: 22.4ms | Allocations: 6863)
+
+
+Started POST "/users" for ::1 at 2024-04-13 16:26:39 +0530
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:13:in `create'
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rajesh@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (9.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users/registrations_controller.rb:13:in `create'
+Completed 422 Unprocessable Entity in 56ms (Views: 2.0ms | ActiveRecord: 23.7ms | Allocations: 9088)
+
+
+Started POST "/users" for ::1 at 2024-04-13 16:26:52 +0530
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rajesh@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users/registrations_controller.rb:13:in `create'
+Completed 422 Unprocessable Entity in 287ms (Views: 0.8ms | ActiveRecord: 1.4ms | Allocations: 2703)
+
+
