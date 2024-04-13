@@ -1,0 +1,20 @@
+default: &default
+  adapter: mysql2
+  username: railsuser
+  password: Abcd@1234
+  host: 127.0.0.1
+  port: 3306 # Default MySQL port
+
+development:
+  <<: *default
+  database: food_swap
+
+# test:
+#   <<: *default
+  # database: myapp_test
+
+# production:
+#   <<: *default
+  # database: myapp_production
+  # username: myapp
+  # password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
