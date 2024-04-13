@@ -18,3 +18,355 @@ Migrating to DeviseCreateUsers (20240411095529)
   [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('4985247767272911600')[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for ::1 at 2024-04-13 10:31:33 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (32.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-2.6.5/gems/railties-7.0.8.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-2.6.5/gems/railties-7.0.8.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.1ms | Allocations: 631)
+Completed 200 OK in 72ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 8219)
+
+
+Started POST "/users" for ::1 at 2024-04-13 10:33:46 +0530
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"rajesh@123", "password"=>"[FILTERED]", "registration"=>{"email"=>"rajesh@123", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 40.9ms | Allocations: 15380)
+
+
+  
+NoMethodError (undefined method `cell_phone_changed?' for #<User id: nil, email: "", first_name: nil, last_name: nil, address: nil, bio: nil, profile_picture: nil, preference: nil, reputationScore: nil, gender: nil, phone: nil, created_at: nil, updated_at: nil>):
+  
+activemodel (7.0.8.1) lib/active_model/attribute_methods.rb:450:in `method_missing'
+activesupport (7.0.8.1) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.8.1) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+activesupport (7.0.8.1) lib/active_support/callbacks.rb:179:in `all?'
+activesupport (7.0.8.1) lib/active_support/callbacks.rb:179:in `block in halting_and_conditional'
+activesupport (7.0.8.1) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.8.1) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.8.1) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.8.1) lib/active_support/callbacks.rb:106:in `run_callbacks'
+activesupport (7.0.8.1) lib/active_support/callbacks.rb:929:in `_run_validate_callbacks'
+activemodel (7.0.8.1) lib/active_model/validations.rb:406:in `run_validations!'
+activemodel (7.0.8.1) lib/active_model/validations/callbacks.rb:115:in `block in run_validations!'
+activesupport (7.0.8.1) lib/active_support/callbacks.rb:107:in `run_callbacks'
+activesupport (7.0.8.1) lib/active_support/callbacks.rb:929:in `_run_validation_callbacks'
+activemodel (7.0.8.1) lib/active_model/validations/callbacks.rb:115:in `run_validations!'
+activemodel (7.0.8.1) lib/active_model/validations.rb:337:in `valid?'
+activerecord (7.0.8.1) lib/active_record/validations.rb:68:in `valid?'
+activerecord (7.0.8.1) lib/active_record/validations.rb:84:in `perform_validations'
+activerecord (7.0.8.1) lib/active_record/validations.rb:47:in `save'
+activerecord (7.0.8.1) lib/active_record/transactions.rb:298:in `block in save'
+activerecord (7.0.8.1) lib/active_record/transactions.rb:354:in `block in with_transaction_returning_status'
+activerecord (7.0.8.1) lib/active_record/connection_adapters/abstract/transaction.rb:319:in `block in within_new_transaction'
+activesupport (7.0.8.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (7.0.8.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (7.0.8.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (7.0.8.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (7.0.8.1) lib/active_record/connection_adapters/abstract/transaction.rb:317:in `within_new_transaction'
+activerecord (7.0.8.1) lib/active_record/connection_adapters/abstract/database_statements.rb:316:in `transaction'
+activerecord (7.0.8.1) lib/active_record/transactions.rb:350:in `with_transaction_returning_status'
+activerecord (7.0.8.1) lib/active_record/transactions.rb:298:in `save'
+activerecord (7.0.8.1) lib/active_record/suppressor.rb:50:in `save'
+devise (4.9.4) app/controllers/devise/registrations_controller.rb:19:in `create'
+actionpack (7.0.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.8.1) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.8.1) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.0.8.1) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.8.1) lib/active_support/callbacks.rb:107:in `run_callbacks'
+actionpack (7.0.8.1) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8.1) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8.1) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8.1) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.1) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8.1) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8.1) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8.1) lib/abstract_controller/base.rb:151:in `process'
+actionpack (7.0.8.1) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.1) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.1) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.8.1) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.8.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.1) lib/action_dispatch/routing/route_set.rb:852:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+activerecord (7.0.8.1) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.1) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.1) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (7.0.8.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/users" for ::1 at 2024-04-13 10:35:45 +0530
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"rajesh@123", "password"=>"[FILTERED]", "registration"=>{"email"=>"rajesh@123", "password"=>"[FILTERED]"}}
+Completed 422 Unprocessable Entity in 64ms (Views: 0.3ms | ActiveRecord: 37.5ms | Allocations: 6620)
+
+
+Started POST "/users" for ::1 at 2024-04-13 10:36:24 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"rajesh@123", "password"=>"[FILTERED]", "registration"=>{"email"=>"rajesh@123", "password"=>"[FILTERED]"}}
+Completed 422 Unprocessable Entity in 70ms (Views: 0.1ms | ActiveRecord: 12.4ms | Allocations: 17109)
+
+
+Started POST "/users" for ::1 at 2024-04-13 10:39:19 +0530
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"rajesh@123", "password"=>"[FILTERED]", "registration"=>{"email"=>"rajesh@123", "password"=>"[FILTERED]"}}
+Completed 422 Unprocessable Entity in 2047ms (Views: 12.9ms | ActiveRecord: 1062.7ms | Allocations: 6447)
+
+
+Started POST "/users" for ::1 at 2024-04-13 10:44:50 +0530
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}
+Completed 422 Unprocessable Entity in 21ms (Views: 0.2ms | ActiveRecord: 8.5ms | Allocations: 6413)
+
+
+Started POST "/users" for ::1 at 2024-04-13 10:45:58 +0530
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}
+Completed 422 Unprocessable Entity in 282ms (Views: 0.5ms | ActiveRecord: 184.2ms | Allocations: 6394)
+
+
+Started POST "/users" for ::1 at 2024-04-13 10:46:27 +0530
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}
+Completed 422 Unprocessable Entity in 593ms (Views: 0.9ms | ActiveRecord: 190.4ms | Allocations: 6395)
+
+
+Started POST "/users" for ::1 at 2024-04-13 10:47:59 +0530
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}
+Completed 422 Unprocessable Entity in 15ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 425)
+
+
+Started POST "/users" for ::1 at 2024-04-13 10:56:03 +0530
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}
+Completed 422 Unprocessable Entity in 105ms (Views: 0.2ms | ActiveRecord: 3.6ms | Allocations: 5507)
+
+
+Started POST "/users" for ::1 at 2024-04-13 10:56:11 +0530
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}
+Completed 422 Unprocessable Entity in 3ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 418)
+
+
+Started POST "/users" for ::1 at 2024-04-13 11:04:02 +0530
+  
+NameError (uninitialized constant UsersController::Private):
+  
+app/controllers/users_controller.rb:19:in `<class:UsersController>'
+app/controllers/users_controller.rb:1:in `<main>'
+Started POST "/users" for ::1 at 2024-04-13 11:20:21 +0530
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}
+Completed 422 Unprocessable Entity in 204ms (Views: 0.3ms | ActiveRecord: 18.3ms | Allocations: 5583)
+
+
+Started POST "/users" for ::1 at 2024-04-13 11:24:21 +0530
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}
+Completed 422 Unprocessable Entity in 207ms (Views: 0.2ms | ActiveRecord: 166.4ms | Allocations: 6389)
+
+
+Started POST "/users" for ::1 at 2024-04-13 11:30:16 +0530
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}
+Completed 422 Unprocessable Entity in 70ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 5524)
+
+
+Started POST "/users" for ::1 at 2024-04-13 11:30:40 +0530
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}
+Completed 422 Unprocessable Entity in 42ms (Views: 0.2ms | ActiveRecord: 28.8ms | Allocations: 6449)
+
+
+Started POST "/users" for ::1 at 2024-04-13 11:37:16 +0530
+  
+ActionController::RoutingError (uninitialized constant RegistrationsController):
+  
+Started POST "/users" for ::1 at 2024-04-13 11:49:16 +0530
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}
+Completed 400 Bad Request in 28ms (ActiveRecord: 0.0ms | Allocations: 338)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users/registrations_controller.rb:23:in `sign_up_params'
+app/controllers/users/registrations_controller.rb:11:in `create'
+Started POST "/users" for ::1 at 2024-04-13 11:49:44 +0530
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 314)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users/registrations_controller.rb:23:in `sign_up_params'
+app/controllers/users/registrations_controller.rb:11:in `create'
+Started POST "/users" for ::1 at 2024-04-13 11:51:42 +0530
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:13:in `create'
+  [1m[36mUser Exists? (14.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rajesh@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:13:in `create'
+  [1m[36mUser Create (27.6ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `reset_password_token`, `reset_password_sent_at`, `remember_created_at`, `sign_in_count`, `current_sign_in_at`, `last_sign_in_at`, `current_sign_in_ip`, `last_sign_in_ip`, `first_name`, `last_name`, `address`, `bio`, `profile_picture`, `preference`, `reputationScore`, `gender`, `phone`, `created_at`, `updated_at`) VALUES ('rajesh@gmail.com', '$2a$12$OhstYZzANuzEKZw/9yKa6eR6CBOMxWGc9qwKdRf.b55/uKleeHfdS', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2024-04-13 06:21:43.266538', '2024-04-13 06:21:43.266538')[0m
+  ↳ app/controllers/users/registrations_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (23.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/registrations_controller.rb:13:in `create'
+Completed 200 OK in 565ms (Views: 9.6ms | ActiveRecord: 69.5ms | Allocations: 11629)
+
+
+Started POST "/signup" for ::1 at 2024-04-13 13:03:04 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Users::RegistrationsController#google_signup as */*
+  Parameters: {"user"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}}
+[Devise] Could not find devise mapping for path "/signup".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 247)
+
+
+  
+AbstractController::ActionNotFound (Could not find devise mapping for path "/signup".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+):
+  
+devise (4.9.4) app/controllers/devise_controller.rb:104:in `unknown_action!'
+devise (4.9.4) app/controllers/devise_controller.rb:79:in `assert_is_devise_resource!'
+activesupport (7.0.8.1) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.8.1) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.8.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.8.1) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.8.1) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.8.1) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.8.1) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.8.1) lib/active_support/callbacks.rb:106:in `run_callbacks'
+actionpack (7.0.8.1) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8.1) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8.1) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8.1) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.1) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8.1) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8.1) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8.1) lib/abstract_controller/base.rb:151:in `process'
+actionpack (7.0.8.1) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.1) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.1) lib/action_dispatch/routing/route_set.rb:852:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+activerecord (7.0.8.1) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.1) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.1) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.1) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (7.0.8.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/signup" for ::1 at 2024-04-13 13:05:26 +0530
+Processing by Users::RegistrationsController#google_signup as */*
+  Parameters: {"user"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'rajesh@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:23:in `google_signup'
+Completed 200 OK in 110ms (Views: 1.2ms | ActiveRecord: 50.9ms | Allocations: 16641)
+
+

@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates_format_of :email, with: Devise::email_regexp, if: :email_changed?
-  validates :phone, length: { in: 10..15 }, numericality: { only_integer: true }, if: :cell_phone_changed?
+  validates_format_of :email, with: Devise::email_regexp
+  validates :phone, length: { in: 10..15 }, numericality: { only_integer: true }, if: :phone_changed?
 
 
 
