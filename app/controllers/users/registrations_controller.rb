@@ -11,7 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     build_resource(sign_up_params)
 
     if resource.save
-      render json: { message: "User created successfully", user: resource }
+      render json: { message: "User created successfully", user: resource, status: :created }
     else
       render json: { error: "User could not be created", errors: resource.errors }, status: :unprocessable_entity
     end
@@ -30,7 +30,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         render json: { error: 'Failed to create user' }, status: :unprocessable_entity
       end
     else
-      render json: { message: 'User already exists', user: @user }
+      render json: { message: 'User already exists', user: @user }, status: :conflict
     end
 
   end

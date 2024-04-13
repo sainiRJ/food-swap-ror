@@ -370,3 +370,11 @@ Processing by Users::RegistrationsController#google_signup as */*
 Completed 200 OK in 110ms (Views: 1.2ms | ActiveRecord: 50.9ms | Allocations: 16641)
 
 
+Started POST "/signup" for ::1 at 2024-04-13 13:55:51 +0530
+Processing by Users::RegistrationsController#google_signup as */*
+  Parameters: {"user"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"rajesh@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (15.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'rajesh@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:23:in `google_signup'
+Completed 409 Conflict in 121ms (Views: 2.4ms | ActiveRecord: 25.4ms | Allocations: 5888)
+
+
