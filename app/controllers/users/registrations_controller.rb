@@ -20,14 +20,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def google_signup
     user = params[:user]
 
+    puts "details #{user}"
+
     @user = User.find_or_initialize_by(email: user[:email])
     if @user.new_record?
       @user.profile_picture = user[:photoURL]
-      @user.first_name = user[:displayName]
-      if @user.save
+      @user.first_name = user[:firstName]
+      @user.last_name = user[:lastName]
+
+      if @user.save(validate: false)
         render json: { user: @user }, status: :created
       else
-        render json: { error: 'Failed to create user' }, status: :unprocessable_entity
+        render json: { error: @user.errors.full_messages }, status: :unprocessable_entity
       end
     else
       render json: { message: 'User already exists', user: @user }, status: :conflict

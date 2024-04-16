@@ -480,3 +480,176 @@ Processing by Users::RegistrationsController#create as */*
 Completed 422 Unprocessable Entity in 287ms (Views: 0.8ms | ActiveRecord: 1.4ms | Allocations: 2703)
 
 
+Started POST "/signup" for ::1 at 2024-04-16 12:31:29 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (14.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Users::RegistrationsController#google_signup as HTML
+  Parameters: {"user"=>{"uid"=>"kBsx8HhvlfgzeBs8JlQHcv5ZdKK2", "email"=>"rajeshpushpakar01@gmail.com", "emailVerified"=>true, "displayName"=>"rajesh pushpakar", "isAnonymous"=>false, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c", "providerData"=>[{"providerId"=>"google.com", "uid"=>"104134159882030414918", "displayName"=>"rajesh pushpakar", "email"=>"rajeshpushpakar01@gmail.com", "phoneNumber"=>nil, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c"}], "stsTokenManager"=>"[FILTERED]", "createdAt"=>"1713250889423", "lastLoginAt"=>"1713250889423", "apiKey"=>"AIzaSyCkXN5ABIza3mgtOfqdsqNMqEbWk-8D79U", "appName"=>"[DEFAULT]"}, "registration"=>{"user"=>{"uid"=>"kBsx8HhvlfgzeBs8JlQHcv5ZdKK2", "email"=>"rajeshpushpakar01@gmail.com", "emailVerified"=>true, "displayName"=>"rajesh pushpakar", "isAnonymous"=>false, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c", "providerData"=>[{"providerId"=>"google.com", "uid"=>"104134159882030414918", "displayName"=>"rajesh pushpakar", "email"=>"rajeshpushpakar01@gmail.com", "phoneNumber"=>nil, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c"}], "stsTokenManager"=>"[FILTERED]", "createdAt"=>"1713250889423", "lastLoginAt"=>"1713250889423", "apiKey"=>"AIzaSyCkXN5ABIza3mgtOfqdsqNMqEbWk-8D79U", "appName"=>"[DEFAULT]"}}}
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'rajeshpushpakar01@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:23:in `google_signup'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:27:in `google_signup'
+  [1m[36mUser Exists? (2.8ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rajeshpushpakar01@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:27:in `google_signup'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users/registrations_controller.rb:27:in `google_signup'
+Completed 500 Internal Server Error in 343ms (ActiveRecord: 77.3ms | Allocations: 19844)
+
+
+  
+NoMethodError (undefined method `error' for #<User id: nil, email: "rajeshpushpakar01@gmail.com", first_name: "rajesh pushpakar", last_name: nil, address: nil, bio: nil, profile_picture: "https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXq...", preference: nil, reputationScore: nil, gender: nil, phone: nil, created_at: nil, updated_at: nil>):
+  
+app/controllers/users/registrations_controller.rb:30:in `google_signup'
+Started POST "/signup" for ::1 at 2024-04-16 12:33:53 +0530
+Processing by Users::RegistrationsController#google_signup as HTML
+  Parameters: {"user"=>{"uid"=>"kBsx8HhvlfgzeBs8JlQHcv5ZdKK2", "email"=>"rajeshpushpakar01@gmail.com", "emailVerified"=>true, "displayName"=>"rajesh pushpakar", "isAnonymous"=>false, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c", "providerData"=>[{"providerId"=>"google.com", "uid"=>"104134159882030414918", "displayName"=>"rajesh pushpakar", "email"=>"rajeshpushpakar01@gmail.com", "phoneNumber"=>nil, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c"}], "stsTokenManager"=>"[FILTERED]", "createdAt"=>"1713250889423", "lastLoginAt"=>"1713251032762", "apiKey"=>"AIzaSyCkXN5ABIza3mgtOfqdsqNMqEbWk-8D79U", "appName"=>"[DEFAULT]"}, "registration"=>{"user"=>{"uid"=>"kBsx8HhvlfgzeBs8JlQHcv5ZdKK2", "email"=>"rajeshpushpakar01@gmail.com", "emailVerified"=>true, "displayName"=>"rajesh pushpakar", "isAnonymous"=>false, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c", "providerData"=>[{"providerId"=>"google.com", "uid"=>"104134159882030414918", "displayName"=>"rajesh pushpakar", "email"=>"rajeshpushpakar01@gmail.com", "phoneNumber"=>nil, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c"}], "stsTokenManager"=>"[FILTERED]", "createdAt"=>"1713250889423", "lastLoginAt"=>"1713251032762", "apiKey"=>"AIzaSyCkXN5ABIza3mgtOfqdsqNMqEbWk-8D79U", "appName"=>"[DEFAULT]"}}}
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'rajeshpushpakar01@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:23:in `google_signup'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:27:in `google_signup'
+  [1m[36mUser Exists? (7.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rajeshpushpakar01@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:27:in `google_signup'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users/registrations_controller.rb:27:in `google_signup'
+Completed 500 Internal Server Error in 351ms (ActiveRecord: 190.5ms | Allocations: 9103)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 2)):
+  
+app/controllers/users/registrations_controller.rb:30:in `google_signup'
+Started POST "/signup" for ::1 at 2024-04-16 12:35:03 +0530
+Processing by Users::RegistrationsController#google_signup as HTML
+  Parameters: {"user"=>{"uid"=>"kBsx8HhvlfgzeBs8JlQHcv5ZdKK2", "email"=>"rajeshpushpakar01@gmail.com", "emailVerified"=>true, "displayName"=>"rajesh pushpakar", "isAnonymous"=>false, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c", "providerData"=>[{"providerId"=>"google.com", "uid"=>"104134159882030414918", "displayName"=>"rajesh pushpakar", "email"=>"rajeshpushpakar01@gmail.com", "phoneNumber"=>nil, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c"}], "stsTokenManager"=>"[FILTERED]", "createdAt"=>"1713250889423", "lastLoginAt"=>"1713251032762", "apiKey"=>"AIzaSyCkXN5ABIza3mgtOfqdsqNMqEbWk-8D79U", "appName"=>"[DEFAULT]"}, "registration"=>{"user"=>{"uid"=>"kBsx8HhvlfgzeBs8JlQHcv5ZdKK2", "email"=>"rajeshpushpakar01@gmail.com", "emailVerified"=>true, "displayName"=>"rajesh pushpakar", "isAnonymous"=>false, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c", "providerData"=>[{"providerId"=>"google.com", "uid"=>"104134159882030414918", "displayName"=>"rajesh pushpakar", "email"=>"rajeshpushpakar01@gmail.com", "phoneNumber"=>nil, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c"}], "stsTokenManager"=>"[FILTERED]", "createdAt"=>"1713250889423", "lastLoginAt"=>"1713251032762", "apiKey"=>"AIzaSyCkXN5ABIza3mgtOfqdsqNMqEbWk-8D79U", "appName"=>"[DEFAULT]"}}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'rajeshpushpakar01@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:23:in `google_signup'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:27:in `google_signup'
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rajeshpushpakar01@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:27:in `google_signup'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users/registrations_controller.rb:27:in `google_signup'
+Completed 422 Unprocessable Entity in 100ms (Views: 1.1ms | ActiveRecord: 23.1ms | Allocations: 9855)
+
+
+Started POST "/signup" for ::1 at 2024-04-16 12:39:56 +0530
+Processing by Users::RegistrationsController#google_signup as HTML
+  Parameters: {"user"=>{"uid"=>"kBsx8HhvlfgzeBs8JlQHcv5ZdKK2", "email"=>"rajeshpushpakar01@gmail.com", "emailVerified"=>true, "displayName"=>"rajesh pushpakar", "isAnonymous"=>false, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c", "providerData"=>[{"providerId"=>"google.com", "uid"=>"104134159882030414918", "displayName"=>"rajesh pushpakar", "email"=>"rajeshpushpakar01@gmail.com", "phoneNumber"=>nil, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c"}], "stsTokenManager"=>"[FILTERED]", "createdAt"=>"1713250889423", "lastLoginAt"=>"1713251397664", "apiKey"=>"AIzaSyCkXN5ABIza3mgtOfqdsqNMqEbWk-8D79U", "appName"=>"[DEFAULT]"}, "registration"=>{"user"=>{"uid"=>"kBsx8HhvlfgzeBs8JlQHcv5ZdKK2", "email"=>"rajeshpushpakar01@gmail.com", "emailVerified"=>true, "displayName"=>"rajesh pushpakar", "isAnonymous"=>false, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c", "providerData"=>[{"providerId"=>"google.com", "uid"=>"104134159882030414918", "displayName"=>"rajesh pushpakar", "email"=>"rajeshpushpakar01@gmail.com", "phoneNumber"=>nil, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c"}], "stsTokenManager"=>"[FILTERED]", "createdAt"=>"1713250889423", "lastLoginAt"=>"1713251397664", "apiKey"=>"AIzaSyCkXN5ABIza3mgtOfqdsqNMqEbWk-8D79U", "appName"=>"[DEFAULT]"}}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'rajeshpushpakar01@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:23:in `google_signup'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:27:in `google_signup'
+  [1m[36mUser Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rajeshpushpakar01@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:27:in `google_signup'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users/registrations_controller.rb:27:in `google_signup'
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 47.3ms | Allocations: 9153)
+
+
+  
+NoMethodError (undefined method `google_signup?' for #<User id: nil, email: "rajeshpushpakar01@gmail.com", first_name: "rajesh pushpakar", last_name: nil, address: nil, bio: nil, profile_picture: "https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXq...", preference: nil, reputationScore: nil, gender: nil, phone: nil, created_at: nil, updated_at: nil>):
+  
+app/controllers/users/registrations_controller.rb:27:in `google_signup'
+Started POST "/signup" for ::1 at 2024-04-16 12:41:22 +0530
+Processing by Users::RegistrationsController#google_signup as HTML
+  Parameters: {"user"=>{"uid"=>"kBsx8HhvlfgzeBs8JlQHcv5ZdKK2", "email"=>"rajeshpushpakar01@gmail.com", "emailVerified"=>true, "displayName"=>"rajesh pushpakar", "isAnonymous"=>false, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c", "providerData"=>[{"providerId"=>"google.com", "uid"=>"104134159882030414918", "displayName"=>"rajesh pushpakar", "email"=>"rajeshpushpakar01@gmail.com", "phoneNumber"=>nil, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c"}], "stsTokenManager"=>"[FILTERED]", "createdAt"=>"1713250889423", "lastLoginAt"=>"1713251397664", "apiKey"=>"AIzaSyCkXN5ABIza3mgtOfqdsqNMqEbWk-8D79U", "appName"=>"[DEFAULT]"}, "registration"=>{"user"=>{"uid"=>"kBsx8HhvlfgzeBs8JlQHcv5ZdKK2", "email"=>"rajeshpushpakar01@gmail.com", "emailVerified"=>true, "displayName"=>"rajesh pushpakar", "isAnonymous"=>false, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c", "providerData"=>[{"providerId"=>"google.com", "uid"=>"104134159882030414918", "displayName"=>"rajesh pushpakar", "email"=>"rajeshpushpakar01@gmail.com", "phoneNumber"=>nil, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c"}], "stsTokenManager"=>"[FILTERED]", "createdAt"=>"1713250889423", "lastLoginAt"=>"1713251397664", "apiKey"=>"AIzaSyCkXN5ABIza3mgtOfqdsqNMqEbWk-8D79U", "appName"=>"[DEFAULT]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'rajeshpushpakar01@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:23:in `google_signup'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:27:in `google_signup'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rajeshpushpakar01@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:27:in `google_signup'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users/registrations_controller.rb:27:in `google_signup'
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 26.2ms | Allocations: 9187)
+
+
+  
+NameError (undefined local variable or method `params' for #<User id: nil, email: "rajeshpushpakar01@gmail.com", first_name: "rajesh pushpakar", last_name: nil, address: nil, bio: nil, profile_picture: "https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXq...", preference: nil, reputationScore: nil, gender: nil, phone: nil, created_at: nil, updated_at: nil>):
+  
+app/models/user.rb:14:in `google_signup'
+app/controllers/users/registrations_controller.rb:27:in `google_signup'
+Started POST "/signup" for ::1 at 2024-04-16 12:47:01 +0530
+Processing by Users::RegistrationsController#google_signup as HTML
+  Parameters: {"user"=>{"uid"=>"kBsx8HhvlfgzeBs8JlQHcv5ZdKK2", "email"=>"rajeshpushpakar01@gmail.com", "emailVerified"=>true, "displayName"=>"rajesh pushpakar", "isAnonymous"=>false, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c", "providerData"=>[{"providerId"=>"google.com", "uid"=>"104134159882030414918", "displayName"=>"rajesh pushpakar", "email"=>"rajeshpushpakar01@gmail.com", "phoneNumber"=>nil, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c"}], "stsTokenManager"=>"[FILTERED]", "createdAt"=>"1713250889423", "lastLoginAt"=>"1713251822027", "apiKey"=>"AIzaSyCkXN5ABIza3mgtOfqdsqNMqEbWk-8D79U", "appName"=>"[DEFAULT]"}, "registration"=>{"user"=>{"uid"=>"kBsx8HhvlfgzeBs8JlQHcv5ZdKK2", "email"=>"rajeshpushpakar01@gmail.com", "emailVerified"=>true, "displayName"=>"rajesh pushpakar", "isAnonymous"=>false, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c", "providerData"=>[{"providerId"=>"google.com", "uid"=>"104134159882030414918", "displayName"=>"rajesh pushpakar", "email"=>"rajeshpushpakar01@gmail.com", "phoneNumber"=>nil, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c"}], "stsTokenManager"=>"[FILTERED]", "createdAt"=>"1713250889423", "lastLoginAt"=>"1713251822027", "apiKey"=>"AIzaSyCkXN5ABIza3mgtOfqdsqNMqEbWk-8D79U", "appName"=>"[DEFAULT]"}}}
+  [1m[36mUser Load (8.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'rajeshpushpakar01@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:23:in `google_signup'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:27:in `google_signup'
+  [1m[36mUser Exists? (9.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rajeshpushpakar01@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:27:in `google_signup'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users/registrations_controller.rb:27:in `google_signup'
+Completed 500 Internal Server Error in 264ms (ActiveRecord: 35.3ms | Allocations: 3068)
+
+
+  
+NameError (undefined local variable or method `params' for #<User id: nil, email: "rajeshpushpakar01@gmail.com", first_name: "rajesh pushpakar", last_name: nil, address: nil, bio: nil, profile_picture: "https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXq...", preference: nil, reputationScore: nil, gender: nil, phone: nil, created_at: nil, updated_at: nil>):
+  
+app/models/user.rb:14:in `google_signup'
+app/controllers/users/registrations_controller.rb:27:in `google_signup'
+Started POST "/signup" for ::1 at 2024-04-16 12:49:52 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Users::RegistrationsController#google_signup as HTML
+  Parameters: {"user"=>{"user"=>{"uid"=>"kBsx8HhvlfgzeBs8JlQHcv5ZdKK2", "email"=>"rajeshpushpakar01@gmail.com", "emailVerified"=>true, "displayName"=>"rajesh pushpakar", "isAnonymous"=>false, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c", "providerData"=>[{"providerId"=>"google.com", "uid"=>"104134159882030414918", "displayName"=>"rajesh pushpakar", "email"=>"rajeshpushpakar01@gmail.com", "phoneNumber"=>nil, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c"}], "stsTokenManager"=>"[FILTERED]", "createdAt"=>"1713250889423", "lastLoginAt"=>"1713251992925", "apiKey"=>"AIzaSyCkXN5ABIza3mgtOfqdsqNMqEbWk-8D79U", "appName"=>"[DEFAULT]"}, "providerId"=>"google.com", "_tokenResponse"=>"[FILTERED]", "operationType"=>"signIn"}, "registration"=>{"user"=>{"user"=>{"uid"=>"kBsx8HhvlfgzeBs8JlQHcv5ZdKK2", "email"=>"rajeshpushpakar01@gmail.com", "emailVerified"=>true, "displayName"=>"rajesh pushpakar", "isAnonymous"=>false, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c", "providerData"=>[{"providerId"=>"google.com", "uid"=>"104134159882030414918", "displayName"=>"rajesh pushpakar", "email"=>"rajeshpushpakar01@gmail.com", "phoneNumber"=>nil, "photoURL"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c"}], "stsTokenManager"=>"[FILTERED]", "createdAt"=>"1713250889423", "lastLoginAt"=>"1713251992925", "apiKey"=>"AIzaSyCkXN5ABIza3mgtOfqdsqNMqEbWk-8D79U", "appName"=>"[DEFAULT]"}, "providerId"=>"google.com", "_tokenResponse"=>"[FILTERED]", "operationType"=>"signIn"}}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` IS NULL LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:25:in `google_signup'
+Completed 500 Internal Server Error in 150ms (ActiveRecord: 56.9ms | Allocations: 17705)
+
+
+  
+NameError (undefined local variable or method `params' for #<User id: nil, email: nil, first_name: nil, last_name: nil, address: nil, bio: nil, profile_picture: nil, preference: nil, reputationScore: nil, gender: nil, phone: nil, created_at: nil, updated_at: nil>):
+  
+app/models/user.rb:14:in `google_signup'
+app/controllers/users/registrations_controller.rb:29:in `google_signup'
+Started POST "/signup" for ::1 at 2024-04-16 12:54:31 +0530
+Processing by Users::RegistrationsController#google_signup as HTML
+  Parameters: {"user"=>{"federatedId"=>"https://accounts.google.com/104134159882030414918", "providerId"=>"google.com", "email"=>"rajeshpushpakar01@gmail.com", "emailVerified"=>true, "firstName"=>"rajesh", "fullName"=>"rajesh pushpakar", "lastName"=>"pushpakar", "photoUrl"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c", "localId"=>"kBsx8HhvlfgzeBs8JlQHcv5ZdKK2", "displayName"=>"rajesh pushpakar", "idToken"=>"[FILTERED]", "context"=>"", "oauthAccessToken"=>"[FILTERED]", "oauthExpireIn"=>3598, "refreshToken"=>"[FILTERED]", "expiresIn"=>"3600", "oauthIdToken"=>"[FILTERED]", "rawUserInfo"=>"{\"name\":\"rajesh pushpakar\",\"granted_scopes\":\"openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email\",\"id\":\"104134159882030414918\",\"verified_email\":true,\"given_name\":\"rajesh\",\"locale\":\"en\",\"family_name\":\"pushpakar\",\"email\":\"rajeshpushpakar01@gmail.com\",\"picture\":\"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c\"}", "kind"=>"identitytoolkit#VerifyAssertionResponse"}, "registration"=>{"user"=>{"federatedId"=>"https://accounts.google.com/104134159882030414918", "providerId"=>"google.com", "email"=>"rajeshpushpakar01@gmail.com", "emailVerified"=>true, "firstName"=>"rajesh", "fullName"=>"rajesh pushpakar", "lastName"=>"pushpakar", "photoUrl"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c", "localId"=>"kBsx8HhvlfgzeBs8JlQHcv5ZdKK2", "displayName"=>"rajesh pushpakar", "idToken"=>"[FILTERED]", "context"=>"", "oauthAccessToken"=>"[FILTERED]", "oauthExpireIn"=>3598, "refreshToken"=>"[FILTERED]", "expiresIn"=>"3600", "oauthIdToken"=>"[FILTERED]", "rawUserInfo"=>"{\"name\":\"rajesh pushpakar\",\"granted_scopes\":\"openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email\",\"id\":\"104134159882030414918\",\"verified_email\":true,\"given_name\":\"rajesh\",\"locale\":\"en\",\"family_name\":\"pushpakar\",\"email\":\"rajeshpushpakar01@gmail.com\",\"picture\":\"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c\"}", "kind"=>"identitytoolkit#VerifyAssertionResponse"}}}
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'rajeshpushpakar01@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:25:in `google_signup'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:31:in `google_signup'
+  [1m[36mUser Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rajeshpushpakar01@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:31:in `google_signup'
+  [1m[36mTRANSACTION (9.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users/registrations_controller.rb:31:in `google_signup'
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 79.7ms | Allocations: 9408)
+
+
+  
+NameError (undefined local variable or method `params' for #<User id: nil, email: "rajeshpushpakar01@gmail.com", first_name: "rajesh", last_name: "pushpakar", address: nil, bio: nil, profile_picture: nil, preference: nil, reputationScore: nil, gender: nil, phone: nil, created_at: nil, updated_at: nil>):
+  
+app/models/user.rb:14:in `google_signup'
+app/controllers/users/registrations_controller.rb:31:in `google_signup'
+Started POST "/signup" for ::1 at 2024-04-16 12:56:59 +0530
+Processing by Users::RegistrationsController#google_signup as HTML
+  Parameters: {"user"=>{"federatedId"=>"https://accounts.google.com/104134159882030414918", "providerId"=>"google.com", "email"=>"rajeshpushpakar01@gmail.com", "emailVerified"=>true, "firstName"=>"rajesh", "fullName"=>"rajesh pushpakar", "lastName"=>"pushpakar", "photoUrl"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c", "localId"=>"kBsx8HhvlfgzeBs8JlQHcv5ZdKK2", "displayName"=>"rajesh pushpakar", "idToken"=>"[FILTERED]", "context"=>"", "oauthAccessToken"=>"[FILTERED]", "oauthExpireIn"=>3598, "refreshToken"=>"[FILTERED]", "expiresIn"=>"3600", "oauthIdToken"=>"[FILTERED]", "rawUserInfo"=>"{\"name\":\"rajesh pushpakar\",\"granted_scopes\":\"openid https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile\",\"id\":\"104134159882030414918\",\"verified_email\":true,\"given_name\":\"rajesh\",\"locale\":\"en\",\"family_name\":\"pushpakar\",\"email\":\"rajeshpushpakar01@gmail.com\",\"picture\":\"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c\"}", "kind"=>"identitytoolkit#VerifyAssertionResponse"}, "registration"=>{"user"=>{"federatedId"=>"https://accounts.google.com/104134159882030414918", "providerId"=>"google.com", "email"=>"rajeshpushpakar01@gmail.com", "emailVerified"=>true, "firstName"=>"rajesh", "fullName"=>"rajesh pushpakar", "lastName"=>"pushpakar", "photoUrl"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c", "localId"=>"kBsx8HhvlfgzeBs8JlQHcv5ZdKK2", "displayName"=>"rajesh pushpakar", "idToken"=>"[FILTERED]", "context"=>"", "oauthAccessToken"=>"[FILTERED]", "oauthExpireIn"=>3598, "refreshToken"=>"[FILTERED]", "expiresIn"=>"3600", "oauthIdToken"=>"[FILTERED]", "rawUserInfo"=>"{\"name\":\"rajesh pushpakar\",\"granted_scopes\":\"openid https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile\",\"id\":\"104134159882030414918\",\"verified_email\":true,\"given_name\":\"rajesh\",\"locale\":\"en\",\"family_name\":\"pushpakar\",\"email\":\"rajeshpushpakar01@gmail.com\",\"picture\":\"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c\"}", "kind"=>"identitytoolkit#VerifyAssertionResponse"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'rajeshpushpakar01@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:25:in `google_signup'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:31:in `google_signup'
+  [1m[36mUser Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rajeshpushpakar01@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:31:in `google_signup'
+  [1m[36mTRANSACTION (16.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users/registrations_controller.rb:31:in `google_signup'
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 37.5ms | Allocations: 9228)
+
+
+  
+NameError (undefined local variable or method `user' for #<User id: nil, email: "rajeshpushpakar01@gmail.com", first_name: "rajesh", last_name: "pushpakar", address: nil, bio: nil, profile_picture: nil, preference: nil, reputationScore: nil, gender: nil, phone: nil, created_at: nil, updated_at: nil>):
+  
+app/models/user.rb:14:in `google_signup'
+app/controllers/users/registrations_controller.rb:31:in `google_signup'
+Started POST "/signup" for ::1 at 2024-04-16 12:59:33 +0530
+Processing by Users::RegistrationsController#google_signup as HTML
+  Parameters: {"user"=>{"federatedId"=>"https://accounts.google.com/104134159882030414918", "providerId"=>"google.com", "email"=>"rajeshpushpakar01@gmail.com", "emailVerified"=>true, "firstName"=>"rajesh", "fullName"=>"rajesh pushpakar", "lastName"=>"pushpakar", "photoUrl"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c", "localId"=>"kBsx8HhvlfgzeBs8JlQHcv5ZdKK2", "displayName"=>"rajesh pushpakar", "idToken"=>"[FILTERED]", "context"=>"", "oauthAccessToken"=>"[FILTERED]", "oauthExpireIn"=>3599, "refreshToken"=>"[FILTERED]", "expiresIn"=>"3600", "oauthIdToken"=>"[FILTERED]", "rawUserInfo"=>"{\"name\":\"rajesh pushpakar\",\"granted_scopes\":\"https://www.googleapis.com/auth/userinfo.email openid https://www.googleapis.com/auth/userinfo.profile\",\"id\":\"104134159882030414918\",\"verified_email\":true,\"given_name\":\"rajesh\",\"locale\":\"en\",\"family_name\":\"pushpakar\",\"email\":\"rajeshpushpakar01@gmail.com\",\"picture\":\"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c\"}", "kind"=>"identitytoolkit#VerifyAssertionResponse"}, "registration"=>{"user"=>{"federatedId"=>"https://accounts.google.com/104134159882030414918", "providerId"=>"google.com", "email"=>"rajeshpushpakar01@gmail.com", "emailVerified"=>true, "firstName"=>"rajesh", "fullName"=>"rajesh pushpakar", "lastName"=>"pushpakar", "photoUrl"=>"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c", "localId"=>"kBsx8HhvlfgzeBs8JlQHcv5ZdKK2", "displayName"=>"rajesh pushpakar", "idToken"=>"[FILTERED]", "context"=>"", "oauthAccessToken"=>"[FILTERED]", "oauthExpireIn"=>3599, "refreshToken"=>"[FILTERED]", "expiresIn"=>"3600", "oauthIdToken"=>"[FILTERED]", "rawUserInfo"=>"{\"name\":\"rajesh pushpakar\",\"granted_scopes\":\"https://www.googleapis.com/auth/userinfo.email openid https://www.googleapis.com/auth/userinfo.profile\",\"id\":\"104134159882030414918\",\"verified_email\":true,\"given_name\":\"rajesh\",\"locale\":\"en\",\"family_name\":\"pushpakar\",\"email\":\"rajeshpushpakar01@gmail.com\",\"picture\":\"https://lh3.googleusercontent.com/a/ACg8ocLVEjmPXqT0zn4OrjBuxVViph_TkrEDNd5HnH7_EXGh6On0ewDvMw=s96-c\"}", "kind"=>"identitytoolkit#VerifyAssertionResponse"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'rajeshpushpakar01@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users/registrations_controller.rb:25:in `google_signup'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:31:in `google_signup'
+  [1m[36mUser Create (63.1ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `reset_password_token`, `reset_password_sent_at`, `remember_created_at`, `sign_in_count`, `current_sign_in_at`, `last_sign_in_at`, `current_sign_in_ip`, `last_sign_in_ip`, `first_name`, `last_name`, `address`, `bio`, `profile_picture`, `preference`, `reputationScore`, `gender`, `phone`, `created_at`, `updated_at`) VALUES ('rajeshpushpakar01@gmail.com', '', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 'rajesh', 'pushpakar', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2024-04-16 07:29:34.079545', '2024-04-16 07:29:34.079545')[0m
+  ↳ app/controllers/users/registrations_controller.rb:31:in `google_signup'
+  [1m[36mTRANSACTION (22.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/registrations_controller.rb:31:in `google_signup'
+Completed 201 Created in 175ms (Views: 9.4ms | ActiveRecord: 138.1ms | Allocations: 9416)
+
+
